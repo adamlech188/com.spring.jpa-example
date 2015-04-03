@@ -17,7 +17,12 @@
 			<artifactId>spring-data-jpa</artifactId>
 			<version>1.8.0.RELEASE</version>
 		</dependency>
-
+		<dependency>  
+			<groupId>org.apache.commons</groupId>      
+			<artifactId>commons-dbcp2</artifactId>
+			<version>2.1</version>
+		</dependency>
+  
 	</dependencies>
 	<build>
 		<finalName>com.spring.jpa-example</finalName>
