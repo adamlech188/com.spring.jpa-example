@@ -1,4 +1,4 @@
-package com.spring.data.main;
+package com.spring.data.config;
 
 import java.util.Properties;
 
@@ -7,17 +7,23 @@ import javax.sql.DataSource;
 
 import org.apache.commons.dbcp2.BasicDataSource;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.env.Environment;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
 @Configuration
 @PropertySource("file:/my_etc/com.spring.data/application.properties")
 @EnableWebMvc
+@EnableJpaRepositories("com.spring.data.resources")
+@EnableTransactionManagement
+@ComponentScan
 public class ApplicationContext {
 
 	@Resource

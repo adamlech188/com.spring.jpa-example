@@ -1,4 +1,4 @@
-package com.spring.data.main;
+package com.spring.data.config;
 
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
