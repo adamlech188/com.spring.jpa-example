@@ -4,6 +4,7 @@ import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -14,11 +15,11 @@ import javax.persistence.Table;
 public class Message {
 
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "MESSAGE_ID")
 	private Long id;
 
-	@Column(name = "MESSAGE_TEXT")
+	@Column(name = "MESSAGE_TEXT", nullable=false)
 	private String text;
 
 	@ManyToOne(cascade = CascadeType.ALL)
